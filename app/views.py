@@ -18,7 +18,8 @@ def student(request):
             so.save()
             QSO=Student.objects.all()
             d1={'QSO':QSO}
-            return render(request,'display_student.html',d1)
+            return HttpResponse(str(SFDO.cleaned_data))
+            # return render(request,'display_student.html',d1)
             # return HttpResponse(str(SFDO.cleaned_data))
         else:
             return HttpResponse('Invalid Data!!!')
